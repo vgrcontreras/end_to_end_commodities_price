@@ -1,0 +1,27 @@
+version 2:
+
+sources:
+  - name: commodities
+    database: postgresql_commodities_database
+    schema: public
+    tables:
+      - name: commodities
+        description: One row per ticker closure last 5 days
+        columns:
+          - name: Date
+            description: Date of ticker closure
+          - name: Close
+            description: Value of ticker closure
+          - name: ticker
+            description: Ticker of commodity
+      - name: movimentacao_commodities
+        description: One row per ticker transaction
+        columns:
+          - name: date
+            description: Date of transaction
+          - name: symbol
+            description: Ticker of the commodity
+          - name: action
+            description: Type of transaction (sell or buy)
+          - name: quantity
+            description: Quantity of tickers transactioned
