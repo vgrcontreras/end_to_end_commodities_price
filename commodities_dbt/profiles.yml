@@ -1,12 +1,12 @@
 commodities_dbt:
   outputs:
     dev:
-      dbname: postgresql_commodities_database
-      host: dpg-ctleaspopnds73f9osl0-a.oregon-postgres.render.com
-      pass: Q3yqzV3kMPpedBKlOpMi3D4KVjBp8z0C
-      port: 5432
+      dbname: "{{ env_var('DB_NAME') }}"
+      host: "{{ env_var('DB_HOST') }}"
+      pass: "{{ env_var('DB_PASSWORD') }}"
+      port: "{{ env_var('DB_PORT') | int}}"
       schema: public
-      threads: 1
+      threads: "{{ env_var('DB_THREADS') | int}}"
       type: postgres
-      user: postgresql_commodities_database_user
+      user: "{{ env_var('DB_USER') }}"
   target: dev
