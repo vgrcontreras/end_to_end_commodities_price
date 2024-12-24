@@ -9,3 +9,5 @@ class Settings(BaseSettings):
     DB_HOST: str
     DB_PASSWORD: str
     DB_USER: str
+    DB_THREADS: str
+    DBT_PROFILES_DIR: str
